@@ -30,13 +30,13 @@ $(document).ready(function(){
                 // Looping through each result item
                 for (var i = 0; i < results.length; i++) {
                     console.log(results[i].slug);
-                    // Creating and storing a div tag
+                    // Creating and div element
                     var animalDiv = $("<div>");
 
                     // Creating a paragraph tag with the result item's rating
                     var p = $("<p>").text("Rating: " + results[i].rating);
 
-                    // Creating and storing an image tag
+                    // Creating  an image tag
                     var animalImage = $("<img>");
                     // Setting the src attribute of the image to a property pulled off the result item
                     animalImage.attr("src", results[i].images.fixed_height.url);
@@ -51,11 +51,14 @@ $(document).ready(function(){
         });
     }
 
-
+// adding an event listener for the class button and display our gifs
     $(document).on("click", ".button", displayAnimalGiphy);
 
+    // creating an array of animlas
     var myanimals = ["dog", "cat", "elephant"];
     
+    // making a function to make our button
+
     function insertButton() {
         $("#animalButtons").empty();
         for (var i=0; i<myanimals.length; i++) {
@@ -69,15 +72,18 @@ $(document).ready(function(){
         }
     }
 
+    // event on click for the submit button
     $("#addAnimal").on("click", function(event){
         event.preventDefault();
-
+        // get the value from the text 
         var myAnimal = $("#animal-input").val().trim();
-
+        // pushing a the new animal inserted in the arr
         myanimals.push(myAnimal);
+        // calling our function so our new animal is added as a button to the #animalButton
         insertButton();
-    })
-
+    });
+    
+    // calling this function to make sure the btn is added
     insertButton();
 
 });
