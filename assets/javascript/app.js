@@ -1,4 +1,6 @@
 
+$(document).ready(function(){
+
 
 
     
@@ -54,25 +56,13 @@
 
     var myanimals = ["dog", "cat", "elephant"];
     
-    function displaying() {
-        var myAnimal = $(this).attr("data-name");
-        var queryURL2 = "https://www.omdbapi.com/?t=" + myAnimal + "&y=&plot=short&apikey=trilogy";
-
-        $.ajax({
-            url: queryURL2,
-            method: "GET"
-        }).then(function(response1){
-            console.log(response1.data);
-        })
-    }
-    
     function insertButton() {
         $("#animalButtons").empty();
         for (var i=0; i<myanimals.length; i++) {
             var btn = $("<button>");
 
             btn.addClass("button");
-            btn.attr("data-name", myanimals[i]);
+            btn.attr("data-animal", myanimals[i]);
             btn.text(myanimals[i]);
             $("#animalButtons").append(btn);
 
@@ -87,5 +77,7 @@
         myanimals.push(myAnimal);
         insertButton();
     })
+
     insertButton();
 
+});
