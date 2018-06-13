@@ -10,7 +10,7 @@ function displayAnimalGiphy() {
 
     // Constructing a queryURL using the animal name
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-        animal + "&api_key=NF9xm9MqHWlgQ72hISsHmFo4neb2EBZB&limit=5";
+        animal + "&api_key=NF9xm9MqHWlgQ72hISsHmFo4neb2EBZB&limit=10";
 
     // Performing an AJAX request with the queryURL
     $.ajax({
@@ -24,7 +24,7 @@ function displayAnimalGiphy() {
 
             // storing the data from the AJAX request in the results variable
             var results = response.data;
-
+            $("#animals").empty();
 
             // Looping through each result item
             for (var i = 0; i < results.length; i++) {
