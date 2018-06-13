@@ -10,15 +10,20 @@ form {
     float: right;
     position: relative;
     right: 50px;
+    font-family: 'Aladin', cursive;
+    font-size: 40px;
+    
 }
 
 button {
     width: 100px;
     height: 40px;
     color: rgb(255, 254, 254);
-    background-color: rgb(223, 80, 23);
-    font-size: 15px;
+    background-color: rgb(10, 69, 196);
+    font-size: 18px;
     cursor: pointer;
+    font-family: 'Aladin', cursive;
+    letter-spacing: 1px;
 }
 
 button:hover {
@@ -28,13 +33,19 @@ button:hover {
 
 #addAnimal {
     position: relative;
-    top: 10px;
     width: 100px;
     height: 40px;
     color: rgb(255, 254, 254);
-    background-color: rgb(167, 66, 23);
-    font-size: 15px;
+    background-color: rgb(10, 69, 196);
+    font-size: 20px;
     cursor: pointer;
+    font-family: 'Aladin', cursive;
+    letter-spacing: 1px;
+}
+
+#addAnimal:hover {
+    background-color: rgb(222, 222, 228);
+    color: black
 }
 
 #animal-input {
