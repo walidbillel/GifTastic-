@@ -1,0 +1,50 @@
+body {
+    background-color: rgb(191, 191, 224);
+}
+
+#animals {
+    display: inline-block;
+}
+
+form {
+    float: right;
+    position: relative;
+    right: 50px;
+}
+
+button {
+    width: 100px;
+    height: 40px;
+    color: rgb(255, 254, 254);
+    background-color: rgb(223, 80, 23);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: rgb(222, 222, 228);
+    color: black
+}
+
+#addAnimal {
+    position: relative;
+    top: 10px;
+    width: 100px;
+    height: 40px;
+    color: rgb(255, 254, 254);
+    background-color: rgb(167, 66, 23);
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#animal-input {
+    width: 300px;
+    height: 30px;
+    
+}
+
+label {
+    font-size: 20px;
+    font-weight: bold;
+}
+

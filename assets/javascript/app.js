@@ -38,6 +38,17 @@ $(document).ready(function(){
 
                     // Creating  an image tag
                     var animalImage = $("<img>");
+
+                    animalDiv.css("float", "right");
+                    
+                    animalDiv.attr("data-still", results[i].images.fixed_height_still.url);
+
+                    animalDiv.attr("data-animate", results[i].images.fixed_height.url);
+
+                    animalDiv.attr("data-state", "still");
+
+                    animalDiv.addClass("gif");
+
                     // Setting the src attribute of the image to a property pulled off the result item
                     animalImage.attr("src", results[i].images.fixed_height.url);
 
@@ -47,9 +58,23 @@ $(document).ready(function(){
 
                     // Prependng the animalDiv to the HTML page in the "#gifs-appear-here" div
                     $("#animals").prepend(animalDiv);
+
             }
         });
     }
+
+    $(".gif").on("click", function() {
+
+        var state = $(this).attr("data-state");
+        console.log(state)
+        if (state === "still") {
+          $(this).attr("src", $(this).attr("data-animate"));
+          $(this).attr("data-state", "animate");
+        } else {
+          $(this).attr("src", $(this).attr("data-still"));
+          $(this).attr("data-state", "still");
+        }
+      });
 
 // adding an event listener for the class button and display our gifs
     $(document).on("click", ".button", displayAnimalGiphy);
